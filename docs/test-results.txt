@@ -1,0 +1,15 @@
+
+> test
+> node tests/learning.test.mjs
+
+{"map":0,"agent":0,"before":0,"after":30,"steps":28}
+{"map":0,"agent":1,"before":0,"after":30,"steps":28}
+{"map":0,"agent":2,"before":0,"after":30,"steps":28}
+{"map":1,"agent":0,"before":0,"after":30,"steps":28}
+{"map":1,"agent":1,"before":0,"after":30,"steps":28}
+{"map":1,"agent":2,"before":0,"after":30,"steps":28}
+{"map":2,"agent":0,"before":0,"after":30,"steps":36}
+{"map":2,"agent":1,"before":0,"after":30,"steps":36}
+{"map":2,"agent":2,"before":0,"after":30,"steps":36}
+Learning, map geometry, collisions, and policy restoration verified.
+Invalid import rejection is atomic; shortest-route reference and same-map evaluation scope verified.

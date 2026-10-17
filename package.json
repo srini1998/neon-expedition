@@ -1,0 +1,13 @@
+{
+  "name": "neon-expedition",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build-static.mjs",
+    "test": "node tests/learning.test.mjs",
+    "start": "node scripts/serve.mjs"
+  },
+  "dependencies": {
+    "three": "^0.180.0"
+  }
+}

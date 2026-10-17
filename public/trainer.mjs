@@ -1,0 +1,5 @@
+import {makeMap,Learner} from './core.mjs';
+let agents=[],active=false,remaining=0,generation=0;
+function report(type='progress'){postMessage({type,agents:agents.map(x=>x.snapshot()),remaining});}
+function tick(g){if(!active||g!==generation)return;const batch=Math.min(25,remaining);for(let i=0;i<batch;i++)for(const a of agents)a.episode();remaining-=batch;report();if(remaining<=0){active=false;report('complete');}else setTimeout(()=>tick(g),12);}
+onmessage=({data})=>{try{if(data.type==='init'){active=false;generation++;agents=[0,1,2].map((p)=>new Learner(makeMap(data.map),p,42+p*133));if(data.agents)data.agents.forEach((s,i)=>agents[i].restore(s));report('ready');}else if(data.type==='train'){if(active)return;for(const a of agents){a.alpha=data.alpha??a.alpha;a.epsilonStart=data.epsilonStart??a.epsilonStart;if(data.penalty!=null)a.penalty=data.penalty*(a.profile===2?1.5:a.profile===1?.7:1);}remaining=data.episodes;active=true;generation++;tick(generation);}else if(data.type==='pause'){active=false;generation++;report('paused');}}catch(e){postMessage({type:'error',message:e.message});}};
