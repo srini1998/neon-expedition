@@ -1,0 +1,7 @@
+{
+  "verified_at": "2026-10-17T22:37:31.932Z",
+  "results": "Atlas\n30/30 same-map wins · 28 moves · shortest 28\nNova\n30/30 same-map wins · 28 moves · shortest 28\nEcho\n30/30 same-map wins · 28 moves · shortest 28",
+  "errors": [],
+  "mobile_overflow": false,
+  "scope": "Actual browser-worker training, 500 episodes/profile, same-map evaluation; not an accuracy guarantee."
+}
