@@ -54,3 +54,7 @@ Three.js is included under its MIT license in `dist/vendor/THREE-LICENSE.txt`. D
 
 ## Engineering review
 See docs/review.md for corrected behavior, actual verification, scope and limitations.
+
+## Public browser demo
+
+https://neon-expedition-lab.vercel.app — the same static app, real on-device Q-learning. Existing owner-private Sites preview is unchanged. A fresh public build trained500episodes/agent and achieved30/30same-map evaluation wins for all three profiles on the selected first map; this is not unseen-map generalization.
